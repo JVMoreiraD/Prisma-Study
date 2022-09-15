@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  database:
+    image: postgres
+    container_name: prisma-study
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=prisma
+      - POSTGRES_PASSWORD=prismaStudy
+      - POSTGRES_DB=prismaTests
+    volumes:
+      - pgdata:/data/postgres
+volumes:
+  pgdata:
+    driver: local
